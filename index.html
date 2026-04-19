@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Puzzle game</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 🎬 VIDEO -->
+<video autoplay muted loop id="bg-video">
+  <source src="bg.mp4" type="video/mp4">
+</video>
+
+<!-- 🎵 MUSIC -->
+<audio id="bg-music" loop>
+  <source src="music.mp3" type="audio/mp3">
+</audio>
+
+<!-- 🔊 CLICK SOUND -->
+<audio id="click-sound">
+  <source src="click.mp4" type="audio/mp4">
+</audio>
+
+<!-- 🎮 CONTENT -->
+<div class="home">
+
+  <div class="content">
+
+    
+    <h1 class="title">🧩 jeu de puzzle</h1>
+    <p class="subtitle">Défie ton cerveau</p>
+
+    <button class="start-btn" onclick="startGame()">
+      ▶ Commencer
+    </button>
+  </div>
+
+</div>
+
+<!-- 🔊 SOUND BUTTON -->
+<div class="sound-btn" onclick="toggleSound()">🔊</div>
+
+<script>
+let music = document.getElementById("bg-music");
+let clickSound = document.getElementById("click-sound");
+
+music.volume = 0.3;
+
+let isPlaying = false;
+
+// 🔊 SOUND TOGGLE
+function toggleSound() {
+  if (!isPlaying) {
+    music.play();
+    isPlaying = true;
+    document.querySelector(".sound-btn").innerHTML = "🔊";
+  } else {
+    music.pause();
+    isPlaying = false;
+    document.querySelector(".sound-btn").innerHTML = "🔇";
+  }
+}
+
+// 🎮 START GAME
+function startGame() {
+  clickSound.play();
+
+  document.body.classList.add("fade-out");
+
+  setTimeout(() => {
+    window.location.href = "choose.html";
+  }, 500);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Choose Image</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 🎬 VIDEO BACKGROUND -->
+<video autoplay muted loop id="bg-video">
+  <source src="bg1.mp4" type="video/mp4">
+</video>
+
+<!-- 🔊 CLICK SOUND -->
+<audio id="click-sound">
+  <source src="click.mp4" type="audio/mp4">
+</audio>
+
+<!-- 🎮 CONTENT -->
+<div class="choose-container">
+
+  <h1 class="choose-title">🎨 Choisissez votre puzzle</h1>
+
+  <div class="cards">
+
+    <div class="card" onclick="selectImage('img1.png')">
+      <img src="img1.png">
+      <div class="overlay">Jouer</div>
+    </div>
+
+    <div class="card" onclick="selectImage('img2.png')">
+      <img src="img2.png">
+      <div class="overlay">Jouer</div>
+    </div>
+
+    <div class="card" onclick="selectImage('img3.png')">
+      <img src="img3.png">
+      <div class="overlay">Jouer</div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+let clickSound = document.getElementById("click-sound");
+
+function selectImage(img) {
+  clickSound.play();
+
+  localStorage.setItem("image", img);
+
+  document.body.classList.add("fade-out");
+
+  setTimeout(() => {
+    window.location.href = "game.html";
+  }, 500);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,355 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+/* 🎬 VIDEO */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+
+
+/* HOME */
+.home {
+  position: relative;
+  height: 100vh;
+}
+
+/* 🎯 CENTER CONTENT */
+.content {
+  position: absolute;
+  top: 55%; /* 👈 adjust if needed */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  width: 80%;
+  max-width: 500px;
+  color: white;
+}
+
+/* TITLE */
+.title {
+  font-size: 48px;
+  margin-bottom: 10px;
+  text-shadow: 0 5px 25px rgba(0,0,0,0.9);
+}
+
+/* SUBTITLE */
+.subtitle {
+  margin-bottom: 25px;
+  opacity: 0.9;
+  text-shadow: 0 3px 15px rgba(0,0,0,0.8);
+}
+
+/* 🎮 START BUTTON */
+.start-btn {
+  padding: 14px 35px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+
+  background: #ff5a2c;
+  color: white;
+
+  cursor: pointer;
+  transition: 0.3s;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+
+  animation: float 2s ease-in-out infinite;
+}
+
+.start-btn:hover {
+  transform: scale(1.1);
+}
+
+/* 🔊 SOUND BUTTON */
+.sound-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+
+  background: #ff3b3b;
+  color: white;
+  font-size: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+
+  animation: pulse 2s infinite;
+}
+
+.sound-btn:hover {
+  transform: scale(1.1);
+}
+
+/* 🎬 FLOAT ANIMATION */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* 🔥 PULSE */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,59,59,0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(255,59,59,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,59,59,0); }
+}
+
+/* 🎬 FADE */
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; }
+}
+
+/* 📱 MOBILE */
+@media (max-width: 500px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .start-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+
+/* ===== CHOOSE PAGE PRO ===== */
+
+/* BACKGROUND VIDEO already موجود */
+
+/* CONTAINER */
+.choose-container {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TITLE */
+.choose-title {
+  font-size: 42px;
+  color: white;
+  margin-bottom: 50px;
+  text-shadow: 0 5px 20px rgba(0,0,0,0.8);
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* CARD */
+.card {
+  width: 250px;
+  height: 250px;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+
+  cursor: pointer;
+
+  transition: 0.4s;
+
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+/* IMAGE */
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0,0,0,0.4);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+
+  opacity: 0;
+  transition: 0.3s;
+}
+
+/* HOVER EFFECT 🔥 */
+.card:hover {
+  transform: scale(1.15) rotate(2deg);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+/* CLICK */
+.card:active {
+  transform: scale(0.95);
+}
+
+/* 🎬 FADE */
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; }
+}
+
+/* 📱 MOBILE */
+@media (max-width: 600px) {
+  .card {
+    width: 150px;
+    height: 150px;
+  }
+
+  .choose-title {
+    font-size: 26px;
+  }
+}
+
+
+
+
+/* BODY */
+body {
+  background: #f5e6d3; /* brown light */
+  font-family: Arial;
+  text-align: center;
+}
+
+/* INFO */
+.info {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* PAUSE BUTTON */
+#pauseBtn {
+  margin-left: 10px;
+
+  width: 35px;
+  height: 35px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #c2410c;
+  color: white;
+  cursor: pointer;
+}
+
+/* BOARD */
+#board {
+  width: 300px;
+  height: 300px;
+  margin: 40px auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+/* PIECES */
+.piece {
+  width: 100%;
+  height: 100%;
+  background-size: 300px 300px;
+
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+/* WIN POPUP */
+.win-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,0.3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.win-box {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 300px;
+
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.win-box button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+
+  background: #c2410c;
+  color: white;
+  cursor: pointer;
+}
+
+
+.logo {
+  width: 150px;
+  display: block;
+  margin: 0 auto 20px;
+}
